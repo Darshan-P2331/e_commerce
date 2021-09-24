@@ -1,0 +1,98 @@
+@URI = http://localhost:8000
+
+GET {{URI}} HTTP/1.1
+
+
+###
+POST {{URI}}/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "User1",
+    "email": "test@gmail.com",
+    "password": "12345678"
+}
+
+###
+GET {{URI}}/user/refresh_token HTTP/1.1
+
+###
+POST {{URI}}/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "12345678"
+}
+
+###
+GET {{URI}}/user/logout HTTP/1.1
+
+###
+GET {{URI}}/user/info HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDU3ZWEyNzU2NTliNGU0MGRlNTI1OSIsImlhdCI6MTYzMTk0NDM1NCwiZXhwIjoxNjMyMDMwNzU0fQ.xzW_A_lcFtqWri8wxwY-e-mJjH0UniEoINek4uLLimw
+
+###
+GET {{URI}}/api/category HTTP/1.1
+
+###
+POST {{URI}}/api/category HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDU3ZWEyNzU2NTliNGU0MGRlNTI1OSIsImlhdCI6MTYzMTk1NzY3MywiZXhwIjoxNjMyMDQ0MDczfQ.Gpfms35bNfhjUelcV-Oe8bTMIlnS_c90y0sANJb5qg0
+Content-Type: application/json
+
+{
+    "name": "category2"
+}
+
+###
+DELETE {{URI}}/api/category/6145cf866bede1801f49af1a HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDU3ZWEyNzU2NTliNGU0MGRlNTI1OSIsImlhdCI6MTYzMTk1NzY3MywiZXhwIjoxNjMyMDQ0MDczfQ.Gpfms35bNfhjUelcV-Oe8bTMIlnS_c90y0sANJb5qg0
+
+###
+PUT {{URI}}/api/category/6145cf5d6bede1801f49af15 HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDU3ZWEyNzU2NTliNGU0MGRlNTI1OSIsImlhdCI6MTYzMTk1NzY3MywiZXhwIjoxNjMyMDQ0MDczfQ.Gpfms35bNfhjUelcV-Oe8bTMIlnS_c90y0sANJb5qg0
+Content-Type: application/json
+
+{
+    "name": "ChangedCategory1"
+}
+
+###
+GET {{URI}}/api/products HTTP/1.1
+
+###
+POST {{URI}}/api/products HTTP/1.1
+Content-Type: application/json
+
+
+{
+    "product_id": "pr04",
+    "title": "Product 04",
+    "description": "description",
+    "price": 122,
+    "content": "content",
+    "category": "test1",
+    "images": {
+        "public_id": "",
+        "url": ""
+    }
+}
+
+
+###
+PUT {{URI}}/api/products/61471d1407b7c3e3a8197f3a HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Product 01 update",
+    "description": "description",
+    "price": 121,
+    "content": "content",
+    "category": "test",
+    "images": {
+        "public_id": "",
+        "url": ""
+    }
+}
+
+###
